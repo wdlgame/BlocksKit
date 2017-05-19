@@ -332,6 +332,11 @@ typedef A2DynamicDelegate *(^A2GetDynamicDelegateBlock)(NSObject *, BOOL);
 		if ([delegate isEqual:dynamicDelegate]) {
 			delegate = nil;
 		}
+        
+        if([delegate isKindOfClass:NSClassFromString(@"ZMBrowserViewController")]) {
+            delegate = nil;
+        }
+        
 		dynamicDelegate.realDelegate = delegate;
 	});
 
